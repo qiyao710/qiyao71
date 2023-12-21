@@ -1,0 +1,236 @@
+* {
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+/* html {
+  scroll-behavior: smooth;
+} */
+body {
+  height: 100vh;
+  background-color: rgb(186, 243, 243);
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+header {
+  width: 100%;
+  height: 60px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  z-index: 99;
+  top: 0;
+}
+
+header div img {
+  width: 50px;
+  height: 50px;
+}
+
+header div {
+  display: flex;
+  align-items: center;
+  margin-right: 60px;
+}
+
+header div h3 {
+  color: rgb(77, 189, 241);
+  margin-left: 20px;
+  margin-top: 5px;
+  text-overflow: clip;
+  white-space: nowrap;
+}
+header div a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+header ul li {
+  list-style: none;
+  margin: 10px 30px 10px 0;
+}
+
+header ul li a {
+  color: rgb(77, 189, 241);
+  font-weight: bolder;
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+header li {
+  background: linear-gradient(to right, rgb(77, 189, 241), rgb(124, 205, 243));
+  background-repeat: no-repeat;
+  background-size: 0 2px;
+  transition: background-size 0.5s;
+  background-position: right bottom;
+}
+header li:hover {
+  background-position: left bottom;
+  background-size: 100% 2px;
+}
+
+/* 留言板 */
+.messages {
+  width: 60%;
+  margin: auto;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  background: rgb(124, 205, 243);
+  background-color: rgba(255, 255, 255, 0.266);
+  box-shadow: 0 10px 50px #00000019;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+  width: 100px;
+  height: 200px;
+  padding-bottom: 50px;
+}
+.form span {
+  margin-top: 3px;
+  color: #f85151;
+  font-weight: bold;
+  visibility: hidden;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+input,
+textarea {
+  width: 200px;
+  border: none;
+  color: #000;
+  font: 100 15px "";
+  border-radius: 10px;
+  padding: 10px;
+}
+
+input {
+  margin-bottom: 20px;
+}
+.display {
+  visibility: visible;
+}
+#username {
+  height: 20px;
+}
+
+#message {
+  height: 50px;
+  max-width: 1000px;
+}
+
+.messages h6 {
+  width: 100%;
+  text-align: start;
+  font-size: 25px;
+  background-image: linear-gradient(135deg, #8ec5fc 0%, #4b91a2 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 5px;
+}
+
+#submitBtn {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(90deg, #c0e2f0 0%, #8ec5fc 100%);
+  border: 1px solid #b1e5fc;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  color: #ffffff;
+  box-shadow: 3px 3px 3px 0 #c7c6c6, inset 4px 4px 5px;
+}
+#submitBtn:active {
+  box-shadow: inset 3px 3px 10px rgb(170, 170, 170);
+  font-size: 19px;
+  color: #f0eded;
+}
+
+#messageBoard {
+  width: 100%;
+  text-align: left;
+  margin-top: 50px;
+}
+
+@keyframes messageFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.message {
+  width: 1020px;
+  margin: 10px;
+  padding: 10px;
+  opacity: 0;
+  animation: messageFadeIn 0.5s ease forwards;
+  background-image: linear-gradient(90deg, #c3defa 0%, #9bc7f3 100%);
+  background-color: #fff;
+  margin: 70px 0;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px #00000026;
+  text-shadow: 0px 0px 20px #ffffff;
+}
+
+.message-info {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 36px;
+  position: relative;
+}
+
+.info {
+  transform: translateY(-30px);
+}
+
+.info img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 10px #fff solid;
+}
+
+strong {
+  position: absolute;
+  width: 800px;
+  letter-spacing: 3px;
+  top: 70px;
+  left: 170px;
+}
+
+.message-info span {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.content {
+  font-size: 44px;
+  margin: 30px;
+  width: 95%;
+}
